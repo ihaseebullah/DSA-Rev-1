@@ -76,6 +76,16 @@ class LinkedList {
         }
         return iterator.value;
     }
+
+    remove(index) {
+        let iterator = this.head;
+        let prev = this.head;
+        for (let i = 0; i < index; i++) {
+            prev = iterator; iterator = iterator.next;
+        }
+        prev.next = iterator.next;
+        this.length--;
+    }
 }
 
 const myLinkedList = new LinkedList(0);
@@ -83,7 +93,8 @@ const myLinkedList = new LinkedList(0);
 myLinkedList.push(1);
 myLinkedList.push(2);
 myLinkedList.push(3);
-console.log(myLinkedList.set(1, 5))
+// console.log(myLinkedList.set(1, 5))
+console.log(myLinkedList.remove(1))
 console.log(myLinkedList.get(1))
 
 // console.log(myLinkedList.length);
