@@ -12,14 +12,14 @@ class LinkedList {
         this.tail = newNode;
         this.length = 1;
     }
-    push(value){
-        let newNode=new Node(value);
-        let iterator=this.head;
-        while(iterator.next!=null){
-            iterator=iterator.next;
+    push(value) {
+        let newNode = new Node(value);
+        let iterator = this.head;
+        while (iterator.next != null) {
+            iterator = iterator.next;
         }
-        iterator.next=newNode;
-        this.tail=iterator;
+        iterator.next = newNode;
+        this.tail = iterator;
         this.length++;
     }
 
@@ -38,6 +38,14 @@ class LinkedList {
     getLatest() {
         return this.tail.value;
     }
+    getEarliest(){
+        return this.head.value;
+    }
+    shift() {
+        this.head = this.head.next;
+        this.length--;
+    }
+
 }
 
 const myLinkedList = new LinkedList(0);
@@ -48,7 +56,9 @@ myLinkedList.push(3);
 myLinkedList.push(4);
 console.log(myLinkedList.length);
 
-myLinkedList.pop();
+console.log(myLinkedList.getEarliest());
+// myLinkedList.pop();
+myLinkedList.shift()
 
-console.log(myLinkedList.getLatest());
+console.log(myLinkedList.getEarliest());
 
