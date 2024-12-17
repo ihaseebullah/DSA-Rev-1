@@ -45,7 +45,6 @@ class LinkedList {
         this.head = this.head.next;
         this.length--;
     }
-
     prot() {
         let iterator = this.head;
         while (iterator.next != null) {
