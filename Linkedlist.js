@@ -86,6 +86,20 @@ class LinkedList {
         prev.next = iterator.next;
         this.length--;
     }
+
+    reverse() {
+        let left = this.head;
+        this.tail = this.head;
+        let right = left.next;
+        while (right) {
+            let temp = right.next;
+            right.next = left;
+            left = right;
+            right = temp;
+        }
+        this.head.next = null;
+        this.head = left;
+    }
 }
 
 const myLinkedList = new LinkedList(0);
@@ -93,9 +107,13 @@ const myLinkedList = new LinkedList(0);
 myLinkedList.push(1);
 myLinkedList.push(2);
 myLinkedList.push(3);
+myLinkedList.push(4);
+myLinkedList.push(5);
+myLinkedList.reverse();
+myLinkedList.prot()
 // console.log(myLinkedList.set(1, 5))
-console.log(myLinkedList.remove(1))
-console.log(myLinkedList.get(1))
+// console.log(myLinkedList.remove(1))
+// console.log(myLinkedList.get(1))
 
 // console.log(myLinkedList.length);
 // console.log(myLinkedList.getEarliest());
