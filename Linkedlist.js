@@ -60,6 +60,22 @@ class LinkedList {
         this.length++;
     }
 
+    set(index, value) {
+        let iterator = this.head;
+        for (let i = 0; i < index; i++) {
+            iterator = iterator.next;
+        }
+        iterator.value = value;
+        return "Omaiko aww "
+    }
+
+    get(index) {
+        let iterator = this.head;
+        for (let i = 0; i < index; i++) {
+            iterator = iterator.next;
+        }
+        return iterator.value;
+    }
 }
 
 const myLinkedList = new LinkedList(0);
@@ -67,7 +83,8 @@ const myLinkedList = new LinkedList(0);
 myLinkedList.push(1);
 myLinkedList.push(2);
 myLinkedList.push(3);
-myLinkedList.push(4);
+console.log(myLinkedList.set(1, 5))
+console.log(myLinkedList.get(1))
 
 // console.log(myLinkedList.length);
 // console.log(myLinkedList.getEarliest());
