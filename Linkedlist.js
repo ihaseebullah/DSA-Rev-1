@@ -89,8 +89,8 @@ class LinkedList {
 
     reverse() {
         let left = this.head;
-        this.tail = this.head;
         let right = left.next;
+        this.tail = this.head;
         while (right) {
             let temp = right.next;
             right.next = left;
@@ -109,6 +109,7 @@ myLinkedList.push(2);
 myLinkedList.push(3);
 myLinkedList.push(4);
 myLinkedList.push(5);
+myLinkedList.reverse();
 myLinkedList.reverse();
 myLinkedList.prot()
 // console.log(myLinkedList.set(1, 5))
