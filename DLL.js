@@ -71,17 +71,29 @@ class DLL {
         }
         return totall;
     }
+    swapPairs() {
+        let outerLeft = this.head;
+        let outerRight = this.tail;
+        let middle = (this.length) / 2;
+        for (let i = 0; i < middle; i++) {
+            let tempLeft = outerLeft.value
+            let tempRight = outerRight.value
+            outerLeft.value = tempRight
+            outerRight.value = tempLeft
+            outerLeft = outerLeft.next;
+            outerLeft = outerRight.prev;
 
-    // palindrome(){
-
-    // }
+        }
+    }
 }
 
 
-const myDoublyLinkedList = new DLL("H")
+const myDoublyLinkedList = new DLL("E")
 
-myDoublyLinkedList.dannasha("A")
 myDoublyLinkedList.dannasha("T")
+myDoublyLinkedList.dannasha("-")
+myDoublyLinkedList.dannasha("A")
+myDoublyLinkedList.dannasha("H")
 // myDoublyLinkedList.dannasha(4)
 
 // myDoublyLinkedList.rewuse()
@@ -91,15 +103,20 @@ myDoublyLinkedList.dannasha("T")
 // myDoublyLinkedList.swap()
 // myDoublyLinkedList.display()
 
-function palindromeChecker() {
-    // console.log(myDoublyLinkedList.rewuse())
-    // console.log(myDoublyLinkedList.sada())
-    if (myDoublyLinkedList.rewuse() == myDoublyLinkedList.sada()) {
-        console.log("Perfect palindrome")
-        return true;
-    }
-    console.log("Non palindrome")
-    return false;
-}
+// function palindromeChecker() {
+//     // console.log(myDoublyLinkedList.rewuse())
+//     // console.log(myDoublyLinkedList.sada())
+//     if (myDoublyLinkedList.rewuse() == myDoublyLinkedList.sada()) {
+//         console.log("Perfect palindrome")
+//         return true;
+//     }
+//     console.log("Non palindrome")
+//     return false;
+// }
 
-palindromeChecker()
+// palindromeChecker()
+
+
+//Swap in Pairs
+myDoublyLinkedList.swapPairs()
+console.log(myDoublyLinkedList.sada())
