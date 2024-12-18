@@ -1,6 +1,6 @@
 //Linked List reverse Check
 
-reverse(){
+function reverse(){
     let left=this.head;
     let right=left.next;
     this.tail=this.head;
@@ -15,7 +15,7 @@ reverse(){
 }
 //Middle Guy
 
-manzanai(){
+function manzanai(){
     const l=(this.length)/2;
     let iterator=this.head;
     for(let i=0;i<(l-1);i++){
