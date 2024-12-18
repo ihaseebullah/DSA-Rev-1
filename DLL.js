@@ -33,6 +33,13 @@ class DLL {
         this.length++;
     }
 
+    swap(){
+       let head=this.head.value;
+       let tail=this.tail.value;
+       this.head.value=tail;
+       this.tail.value=head;
+    }
+
     rewuse() {
         let iterator = this.tail;
         while (iterator) {
@@ -61,6 +68,8 @@ myDoublyLinkedList.dannasha(3)
 myDoublyLinkedList.dannasha(4)
 
 // myDoublyLinkedList.rewuse()
-myDoublyLinkedList.display()
+// myDoublyLinkedList.display()
 myDoublyLinkedList.insert(9, 2)
+myDoublyLinkedList.insert(9, 4)
+myDoublyLinkedList.swap()
 myDoublyLinkedList.display()
