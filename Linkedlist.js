@@ -100,6 +100,14 @@ class LinkedList {
         this.head.next = null;
         this.head = left;
     }
+    manzanai(){
+        const l=(this.length)/2;
+        let iterator=this.head;
+        for(let i=0;i<(l-1);i++){
+            iterator=iterator.next
+        }
+        return iterator.value
+    }
 }
 
 const myLinkedList = new LinkedList(0);
@@ -109,9 +117,10 @@ myLinkedList.push(2);
 myLinkedList.push(3);
 myLinkedList.push(4);
 myLinkedList.push(5);
-myLinkedList.reverse();
-myLinkedList.reverse();
+// myLinkedList.reverse();
+// myLinkedList.reverse();
 myLinkedList.prot()
+console.log(myLinkedList.manzanai())
 // console.log(myLinkedList.set(1, 5))
 // console.log(myLinkedList.remove(1))
 // console.log(myLinkedList.get(1))
