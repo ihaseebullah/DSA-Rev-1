@@ -13,7 +13,7 @@ function reverse(){
     this.head.next=null;
     this.head=left;
 }
-//Middle Guy
+//Middle Guy 
 
 function manzanai(){
     const l=(this.length)/2;
