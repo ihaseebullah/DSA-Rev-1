@@ -22,7 +22,16 @@ class HashTable {
         if (!this.dataMap[index]) {
             return "404 Notfound!"
         }
-        return this.dataMap[index].filter((i)=> i[0]==key)[0][1]
+        return this.dataMap[index].filter((i) => i[0] == key)[0][1]
+    }
+    keys() {
+        let keys = []
+        this.dataMap.forEach((index) => {
+            if (index.length) {
+                index.forEach(item => keys.push(item[0]))
+            }
+        })
+        return keys;
     }
 }
 
@@ -34,4 +43,17 @@ myTable.set("apples", 4000)
 
 
 
-console.log(myTable.get('apples'))
+console.log(myTable.keys())
+
+// Interview question regarding Hash Table
+let a = [1, 3, 4]
+let b = [1, 2, 5]
+function isThereCommonElement(a, b) {
+    let arr = {}
+    a.forEach((item) => {
+        arr[item] = true;
+    })
+    return b.some(e => arr[e])
+}
+
+console.log(isThereCommonElement(a, b))
